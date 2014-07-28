@@ -12,11 +12,13 @@
 }
 .slick-next:before {
 	content: "\f054";
+	color: black;
 }
 .slick-prev {
 	left: 20px;
 }
 .slick-prev:before {
 	content: "\f053";
+	color: black;
 }
 
