@@ -1,0 +1,22 @@
+.slick-next:before, .slick-prev:before {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-size: 42px;
+}
+.slick-next, .slick-prev {
+	height: 42px;
+	width: 42px;
+}
+.slick-next {
+	right: 25px;
+}
+.slick-next:before {
+	content: "\f054";
+}
+.slick-prev {
+	left: 20px;
+}
+.slick-prev:before {
+	content: "\f053";
+}
+

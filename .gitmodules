@@ -1,0 +1,6 @@
+[submodule "submodules/slick"]
+	path = submodules/slick
+	url = https://github.com/kenwheeler/slick.git
+[submodule "submodules/instafeed.js"]
+	path = submodules/instafeed.js
+	url = https://github.com/stevenschobert/instafeed.js.git
