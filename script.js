@@ -17,15 +17,20 @@
 					accessToken: '289630746.467ede5.3fa70b5dd0a34905b578e7cad757f4bf',
 					clientId: '8f7c904f3eb8494e91e5cdb727c11a66',
 					resolution: 'standard_resolution',
-					template: '<div><img src="{{image}}" /><span> {{caption}} </span> </div>',
+					template: '<div> <div class="inner-slide"> <img src="{{image}}" /><span> {{caption}} </span> </div></div>',
 					target: $(element).attr('id'),
-					limit: 30,
+					limit: attrs.instagramFeed.limit,
+					// We need to make sure the images are loaded before adding a slideshow
 					after: function() {
 						// activate slick
-						$('#' + this.options.target).slick({
+						$(element).slick({
 							infinite: true,
-							slidesToShow: 3,
-							slidesToScroll: 3
+							slidesToShow: 4,
+							slidesToScroll: 3,
+							centerMode: true,
+							centerPadding: '60px',
+							autoplay: true,
+							autoplaySpeed: 1500
 						});
 					}
 				});
@@ -59,7 +64,6 @@
 	{
 		// create a message to display inside the view
 		$scope.message = 'I look geeewwd';
-
 	});
 
 	poopoo.controller('aboutController', function($scope)
