@@ -1,0 +1,12 @@
+{
+  "name": "simple-simple",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "sidr":"1.2.1",
+    "flowtype":"*",
+    "slick.js":"1.3.6",
+    "instafeed.js":"1.3.2",
+    "angular-google-maps":"1.1.13"
+  }
+}
