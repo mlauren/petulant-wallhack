@@ -4,3 +4,6 @@
 [submodule "submodules/instafeed.js"]
 	path = submodules/instafeed.js
 	url = https://github.com/stevenschobert/instafeed.js.git
+[submodule "submodules/google-maps"]
+	path = submodules/google-maps
+	url = https://github.com/nlaplante/angular-google-maps.git

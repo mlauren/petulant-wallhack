@@ -1,3 +1,5 @@
+header, .insta-wrapper {background-color: #6FDC6F;}
+
 .slick-next:before, .slick-prev:before {
 	display: inline-block;
 	font-family: FontAwesome;
@@ -7,15 +9,9 @@
 	height: 42px;
 	width: 42px;
 }
-.slick-next {
-	right: 25px;
-}
 .slick-next:before {
 	content: "\f054";
 	color: black;
-}
-.slick-prev {
-	left: 20px;
 }
 .slick-prev:before {
 	content: "\f053";
@@ -23,5 +19,19 @@
 }
 
 .inner-slide {
-	padding: 5px;
+	padding: 5px 20px;
+}
+
+.angular-google-map, .angular-google-map-container { height: 400px;
+width: 100%;}
+
+.nav-list {margin-bottom: 0;}
+
+header {
+	h1 {margin-bottom: 0;
+		margin-top: 0;}
+}
+
+body {
+	background-color: lighten(#cccccc, 60%);
 }
