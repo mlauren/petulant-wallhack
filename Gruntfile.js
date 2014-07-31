@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         reporter: require('jshint-stylish')
       },
       // when this task is run, do a lint on all js files
-      build: ['Gruntfile.js', 'app/**/*.js']
+      build: ['Gruntfile.js', 'app/**/*.js', '!app/**/*.min.js', '!app/bower_components/**/*.js']
     },
     uglify: {
       options: {
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
       }
     },
     watch: {
-      // Watch css and less and run cssmin
+      // Watch css and sass and run cssmin
       stylesheets: {
         files: ['app/**/*.css', 'app/**/*.scss'],
         tasks: ['sass', 'cssmin']
@@ -67,11 +67,13 @@ module.exports = function (grunt) {
   // @todo add tasks for my development environments
   grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'sass']);
 
+  // grunt.registerTask('publish', 'Publish all my public files to a folder');
   // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
   // Load the plugins +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
   // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
   // make sure all of these are in the package.json file!!
   // to install the dependencies run npm install
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');

@@ -21,7 +21,7 @@ poopoo.directive('fixedHeader', function() {
 				window.activate();
 				$(window).on('scroll', this.activate);
 				$(window).on('resize', this.activate);
-			}
+			};
 			window.activate = function() {
 				var scrollTop = $(window).scrollTop();
 				if( scrollTop > window.elementHeight ) {
@@ -29,17 +29,17 @@ poopoo.directive('fixedHeader', function() {
 				} else {
 					window.scrollDisabled();
 				}
-			}
+			};
 			window.scrollEnabled = function() {
 				$(element).addClass('fixed');
 			
-			}
+			};
 			window.scrollDisabled = function() {
 				$(element).removeClass('fixed');
-			}
+			};
 			window.scrollmything();
 		}
-	}
+	};
 });
 
 poopoo.directive('instagramFeed', function() {
@@ -69,7 +69,7 @@ poopoo.directive('instagramFeed', function() {
 			});
 			scope.feed.run();
 		}
-	}
+	};
 });
 
 poopoo.config(function($routeProvider)
@@ -109,7 +109,7 @@ poopoo.controller('mainController', function($scope)
 
 	$scope.mklabel = {
 		content: "Mel Crews"
-	}
+	};
 });
 
 poopoo.controller('aboutController', function($scope)
