@@ -1,4 +1,13 @@
-header, .insta-wrapper {background-color: #6FDC6F;}
+$mainColor: #6FDC6F;
+$secondaryColor: #6FDCDC;
+
+body, p, h1, h2, h3, h4, h5, h6, span {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+header, .insta-wrapper {background-color: $mainColor;}
+
+.panel.callout {border-color: $mainColor; background-color: lighten($mainColor, 20%);}
 
 .slick-next:before, .slick-prev:before {
 	display: inline-block;
@@ -8,6 +17,15 @@ header, .insta-wrapper {background-color: #6FDC6F;}
 .slick-next, .slick-prev {
 	height: 42px;
 	width: 42px;
+	&:hover {
+		background: transparent;
+	}
+}
+.slick-next {
+	right: -6px;
+} 
+.slick-prev {
+	left: -6px;
 }
 .slick-next:before {
 	content: "\f054";
@@ -22,19 +40,45 @@ header, .insta-wrapper {background-color: #6FDC6F;}
 	padding: 5px 20px;
 }
 
-.angular-google-map, .angular-google-map-container { height: 400px;
-width: 100%;}
-
 .nav-list {margin-bottom: 0;}
 
 header {
+	padding: 3em 0 2em;
+	float: left;
+	display: block;
+	width: 100%;
+
 	h1 {margin-bottom: 0;
-		margin-top: 0;}
+		margin-top: 0;
+		img {
+			height: 1.15em;
+		}
+	}
 }
 
-body {
-	background-color: lighten(#cccccc, 40%);
+#initiate-feed {
+	margin-top: 50px;
 }
+
+#main {float: left; width: 100%;}
+
+.subscribe-wrapper {
+	> * {display: inline; font-weight: bold;}
+}
+
+#top-nav {
+	background-color: lighten($mainColor, 10%);
+	h5 {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 10px 0;
+	}
+	.contact-us-wrapper {
+		padding: 10px 0;
+		> * {display: inline;}
+	}
+}
+
 
 .marker-labels {
     color: red;
@@ -45,5 +89,34 @@ body {
     border: 1px solid black;
     white-space: nowrap;
 }
+
+// Locate Mels section
+
+#locate-mels {
+	padding: 4em 0;
+	#google-locate {
+		.angular-google-map, .angular-google-map-container { height: 400px;
+			display:block;
+			overflow: hidden !important;
+		    border-radius:50%;
+		    -moz-border-radius:50%;
+		    -webkit-border-radius:50%;
+		    -khtml-border-radius: 50%;
+		    text-align:center;
+		    padding: 0 5%;
+		}
+	}
+	#locate-desc {
+		padding: 6em 4em;
+	}
+}
+
+footer {
+	background-color: $secondaryColor;
+	.footer-inner {
+		padding: 4em 0;
+	}
+}
+
 
 

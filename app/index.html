@@ -1,11 +1,12 @@
 <!-- index.html -->
 <!DOCTYPE html>
-<html ng-app="poopoo">
+<html ng-app="poopoo" id="ng-app">
 <head>
   <!-- SCROLLS -->
   <!-- load zurb foundation and fontawesome via CDN -->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" ng-href="http://cdn.foundation5.zurb.com/foundation.css" />
-  <link rel="stylesheet" ng-href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- load all of my slick related styles -->
   <link rel="stylesheet" type="text/css" ng-href="bower_components/slick.js/slick/slick.css" />
@@ -15,13 +16,47 @@
 <body>
 
 	<!-- HEADER AND NAVBAR -->
+	<div id="top-nav" fixed-header class="text-center">
+		<div class="show-for-medium-up contact-us-wrapper">
+	      <h5> 8316 Preston Center Plaza, Dallas, TX 75225 </h5>
+	      <h5> | The Plaza at Preston Center ~ Dallas </h5>
+	      <h5> | Monday- Saturday 10-5:30 </h5>
+	      <h5> | (214) 368-5440 </h5>
+		</div>
+		<div class="show-for-small">
+			<h5> Get Directions </h5>
+		</div>
+    </div>
 	<header>
+		<div id="fb-root"></div>
+	    <script>
+	      (function(d, s, id) {
+	        var js, fjs = d.getElementsByTagName(s)[0];
+	        if (d.getElementById(id)) return;
+	        js = d.createElement(s); js.id = id;
+	        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+	        fjs.parentNode.insertBefore(js, fjs);
+	      }(document, 'script', 'facebook-jssdk'));
+	    </script>
 		<nav class="navbar navbar-default">
 			<div class="container">
-				<h1 class="text-center">Melcrews</h1>
+				<div class="text-center">
+					<h1><img alt="Mel Crews" src="mel-crews-logo.png" /></h1>
+					<div class="row">
+						<div class="columns large-2 small-2">
+							<div class="fb-like text-center" data-href="https://www.facebook.com/pages/Mel-Crews/229252767090673" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+						</div>
+						<div class="columns large-2 small-2 right subscribe-wrapper">
+							<i class="fa fa-envelope-square fa-1x"></i> <h6>Subscribe</h6>
+						</div>
+					</div>
+				</div>
 			</div>
 
 		</nav>
+		<div class="row">
+			<div id="initiate-feed" class="columns large-12 small-12" instagram-feed="{limit:30}"> </div>
+		</div>
 	</header>
 
 	<!-- MAIN CONTENT AND INJECTED VIEWS -->
@@ -31,10 +66,12 @@
 		<!-- this is where content will be injected into the view -->
 		<div ng-view></div>
 
-		<!-- FOOTER -->
-		<footer class="text-center">
-		</footer>
 	</div>
+	<!-- FOOTER -->
+	<footer class="columns large-12 small-12 text-center">
+		<ng-include src="'footer.html'">
+		</ng-include>
+	</footer>
 
 	<!-- SPELLS -->
 	<!-- load jquery via CDN -->

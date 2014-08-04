@@ -62,8 +62,24 @@ poopoo.directive('instagramFeed', function() {
 					// activate slick
 					$(element).slick({
 						infinite: true,
-						slidesToShow: 4,
-						autoplaySpeed: 3000
+						slidesToShow: 3,
+						autoplaySpeed: 3000,
+						responsive: [
+							{
+								breakpoint: 600,
+								settings: {
+									slidesToShow: 2,
+									slidesToScroll: 2
+								}
+							},
+							{
+								breakpoint: 480,
+								settings: {
+									slidesToShow: 1,
+									slidesToScroll: 1
+								}
+							}
+						]
 					});
 				}
 			});
