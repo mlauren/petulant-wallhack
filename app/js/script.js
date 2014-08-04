@@ -8,7 +8,25 @@
 // create the module and name it poopoo
 var poopoo = angular.module('poopoo', ['google-maps']);
 
-//angular.module('poopoo', ['google-maps']);
+poopoo.directive('modalDialog', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			show: '='
+		},
+		replace: true, // replace this with a template we provide
+		transclude: true, // we want to insert custom content into the directive
+		link: function( scope, element, attrs ) {
+			scope.dialogStyle = {};
+			if (attrs.width)
+				scope.dialogStyle.width = attrs.width;
+			scope.hideModal = function() {
+				scope.show = false;
+			};
+		},
+		template: "<div class='ng-modal' ng-show='show'><div class='ng-modal-overlay' ng-click='hideModal()'></div><div class='ng-modal-dialog' ng-style='dialogStyle'><div class='ng-modal-close' ng-click='hideModal()'>X</div><div class='ng-modal-dialog-content' ng-transclude></div></div></div>"
+	}
+});
 
 poopoo.directive('fixedHeader', function() {
 	return {
@@ -54,7 +72,7 @@ poopoo.directive('instagramFeed', function() {
 				accessToken: '289630746.467ede5.3fa70b5dd0a34905b578e7cad757f4bf',
 				clientId: '8f7c904f3eb8494e91e5cdb727c11a66',
 				resolution: 'standard_resolution',
-				template: '<div> <div class="inner-slide"> <img src="{{image}}" /><span> {{caption}} </span> </div></div>',
+				template: '<div> <div class="inner-slide"> <a class="th" href="{{link}}" target="blank"><img src="{{image}}" /> </a> <a href="{{link}}" target="blank"><span> {{caption}} </span></a> </div></div>',
 				target: $(element).attr('id'),
 				limit: attrs.instagramFeed.limit,
 				// We need to make sure the images are loaded before adding a slideshow
@@ -109,6 +127,13 @@ poopoo.config(function($routeProvider)
 
 });
 
+poopoo.controller('modalController', function($scope) {
+  $scope.modalShown = false;
+  $scope.toggleModal = function() {
+    $scope.modalShown = !$scope.modalShown;
+  };
+});
+
 poopoo.controller('mainController', function($scope)
 {
 	// create a message to display inside the view
@@ -116,23 +141,14 @@ poopoo.controller('mainController', function($scope)
 
 	$scope.map = {
 		center: {
-			latitude: 45,
-			longitude: -73
+			latitude: 32.8632069,
+			longitude: -96.802786
 		},
-		zoom: 8,
+		zoom: 15,
 		draggable: true,
 	};
 
 	$scope.mklabel = {
 		content: "Mel Crews"
 	};
-});
-
-poopoo.controller('aboutController', function($scope)
-{
-	$scope.message = 'About page using angular over here';
-});
-
-poopoo.controller('contactController', function($scope) {
-	$scope.message = 'this is a demo so pretty much nooope';
 });
