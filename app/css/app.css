@@ -16,6 +16,9 @@ a.button, .button {
   a.button:visited, .button:visited {
     background-color: #bbd867; }
 
+a.th {
+  border-radius: 5px; }
+
 header .button {
   color: white; }
   header .button:hover, header .button:active, header .button:focus {
