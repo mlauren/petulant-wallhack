@@ -1,4 +1,11 @@
-var fnames = new Array();var ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';
+var fnames = {};
+var ftypes = {};
+fnames[0]='EMAIL';
+ftypes[0]='email';
+fnames[1]='FNAME';
+ftypes[1]='text';
+fnames[2]='LNAME';
+ftypes[2]='text';
 try {
     var jqueryLoaded=jQuery;
     jqueryLoaded=true;
@@ -14,7 +21,7 @@ if (!jqueryLoaded) {
     if (script.readyState && script.onload!==null){
         script.onreadystatechange= function () {
               if (this.readyState == 'complete') mce_preload_check();
-        }    
+        };
     }
 }
 
@@ -33,7 +40,7 @@ if (style.styleSheet) {
   style.appendChild(document.createTextNode(err_style));
 }
 head.appendChild(style);
-setTimeout('mce_preload_check();', 250);
+setTimeout(mce_preload_check, 250);
 
 var mce_preload_checks = 0;
 function mce_preload_check(){
@@ -42,7 +49,7 @@ function mce_preload_check(){
     try {
         var jqueryLoaded=jQuery;
     } catch(err) {
-        setTimeout('mce_preload_check();', 250);
+        setTimeout(mce_preload_check, 250);
         return;
     }
     var script = document.createElement('script');
@@ -52,7 +59,7 @@ function mce_preload_check(){
     try {
         var validatorLoaded=jQuery("#fake-form").validate({});
     } catch(err) {
-        setTimeout('mce_preload_check();', 250);
+        setTimeout(mce_preload_check, 250);
         return;
     }
     mce_init_form();
@@ -68,7 +75,7 @@ function mce_init_form(){
                         $('.datefield','#mc_embed_signup').each(
                             function(){
                                 var txt = 'filled';
-                                var fields = new Array();
+                                var fields = {};
                                 var i = 0;
                                 $(':text', this).each(
                                     function(){
@@ -84,7 +91,7 @@ function mce_init_form(){
                                         }
                                     	if ( fields[0].value=='MM' && fields[1].value=='DD' && (fields[2].value=='YYYY' || (bday && fields[2].value==1970) ) ){
                                     		this.value = '';
-									    } else if ( fields[0].value=='' && fields[1].value=='' && (fields[2].value=='' || (bday && fields[2].value==1970) ) ){
+									    } else if ( fields[0].value === '' && fields[1].value === '' && (fields[2].value === '' || (bday && fields[2].value==1970) ) ){
                                     		this.value = '';
 									    } else {
 									        if (/\[day\]/.test(fields[0].name)){
@@ -97,7 +104,7 @@ function mce_init_form(){
                             });
                         $('.phonefield-us','#mc_embed_signup').each(
                             function(){
-                                var fields = new Array();
+                                var fields = {};
                                 var i = 0;
                                 $(':text', this).each(
                                     function(){
@@ -136,7 +143,7 @@ function mce_success_cb(resp){
         var msg;
         try {
             var parts = resp.msg.split(' - ',2);
-            if (parts[1]==undefined){
+            if (parts[1] === undefined){
                 msg = resp.msg;
             } else {
                 i = parseInt(parts[0]);
