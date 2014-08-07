@@ -8,32 +8,32 @@ a {
 
 a.button, .button {
   color: white;
-  background-color: #6fdc6f; }
+  background-color: #bbd867; }
   a.button.tiny, .button.tiny {
     margin-bottom: 0; }
   a.button:hover, a.button:active, a.button:focus, .button:hover, .button:active, .button:focus {
-    background-color: #46d246; }
+    background-color: #a9ce3e; }
   a.button:visited, .button:visited {
-    background-color: #6fdc6f; }
+    background-color: #bbd867; }
 
 header .button {
   color: white; }
   header .button:hover, header .button:active, header .button:focus {
-    background-color: #46d246;
+    background-color: #a9ce3e;
     color: white; }
   header .button:visited {
-    background-color: #6fdc6f;
+    background-color: #bbd867;
     color: white; }
 
 .insta-wrapper {
-  background-color: #6fdc6f; }
+  background-color: #bbd867; }
 
 header {
-  background: linear-gradient(rgba(111, 220, 111, 0.9), rgba(111, 220, 111, 0.5)), fixed url("../background.jpg"); }
+  background: linear-gradient(rgba(187, 216, 103, 0.9), rgba(187, 216, 103, 0.5)), fixed url("../background.jpg"); }
 
 .panel.callout {
-  border-color: #6fdc6f;
-  background-color: #c1f0c1; }
+  border-color: #bbd867;
+  background-color: #dfedb8; }
 
 .slick-next:before, .slick-prev:before {
   display: inline-block;
@@ -87,18 +87,18 @@ header {
 .subscribe-wrapper > * {
   display: inline;
   font-weight: bold;
-  color: #238f23; }
+  color: #6b8422; }
 .subscribe-wrapper h5 {
   cursor: pointer;
-  color: #238f23; }
+  color: #6b8422; }
 
 #top-nav {
-  background-color: #98e698; }
+  background-color: #cde290; }
   #top-nav h5 {
     margin-top: 0;
     margin-bottom: 0;
     padding: 10px 0;
-    color: #238f23; }
+    color: #6b8422; }
   #top-nav .contact-us-wrapper {
     padding: 10px 0; }
     #top-nav .contact-us-wrapper > * {
