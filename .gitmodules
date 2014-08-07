@@ -1,9 +1,9 @@
-[submodule "submodules/slick"]
-	path = submodules/slick
+[submodule "app/bower_components/slick"]
+	path = app/bower_components/slick
 	url = https://github.com/kenwheeler/slick.git
-[submodule "submodules/instafeed.js"]
-	path = submodules/instafeed.js
+[submodule "app/bower_components/instafeed.js.js"]
+	path = app/bower_components/instafeed.js
 	url = https://github.com/stevenschobert/instafeed.js.git
-[submodule "submodules/google-maps"]
-	path = submodules/google-maps
+[submodule "app/bower_components/angular-google-maps"]
+	path = app/bower_components/angular-google-maps
 	url = https://github.com/nlaplante/angular-google-maps.git
